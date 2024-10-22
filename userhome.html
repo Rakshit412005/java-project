@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Event Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                        url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1920') no-repeat center center/cover;
+            color: #333;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #007BFF;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        .notifications {
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            text-align: center;
+            margin-top: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .navbar a {
+                padding: 12px 16px;
+            }
+
+            .notifications, .main-content {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar a {
+                padding: 10px;
+                width: 100%;
+                text-align: left;
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="userhome.html">Home</a>
+    <a href="createEvent.html">Create Event</a>
+    <a href="#">Event Calendar</a>
+    <a href="#">Request Approval</a>
+    <a href="./contactUs.html">Contact Us</a>
+</div>
+
+<div class="notifications">
+    <h4>Notifications</h4>
+    <p>No new notifications.</p>
+</div>
+
+<div class="main-content">
+    <h1>Welcome to the User Dashboard</h1>
+    <p>Here you can manage your events, check the calendar, request approvals, and more.</p>
+</div>
+
+</body>
+</html>

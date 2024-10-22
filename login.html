@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page - Event Management</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      /* Reliable background image URL */
+      background: url('../../image.png') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+      text-align: center;
+      width: 350px;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .login-container:hover {
+      box-shadow: 0 8px 40px rgba(31, 38, 135, 0.7);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      color: black;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+      background: rgba(255, 255, 255, 0.4);
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff4b2b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: green;
+      /* transform: translateY(-2px); */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .login-container {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h2 {
+        font-size: 24px;
+      }
+
+      input[type="text"], input[type="password"] {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2 style="color: black;">Event Login</h2>
+    <form action="loginprocess.jsp" method="POST">
+      <input type="text" name="mail" placeholder="SRM MAIL ID" required>
+      <input type="password" name="pwd" placeholder="PASSWORD" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>

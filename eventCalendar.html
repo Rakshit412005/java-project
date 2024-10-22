@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Calendar - Event Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom right, #007BFF, #f7f9fb);
+            color: #333;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #007BFF;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        .calendar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .calendar-cell {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .calendar-cell:hover {
+            background-color: #d3d3d3;
+        }
+
+        .upcoming-events {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .upcoming-events h2 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .upcoming-events ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .upcoming-events li {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .create-event-btn {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .create-event-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .calendar {
+                grid-template-columns: repeat(5, 1fr); /* 5 columns for medium screens */
+            }
+
+            .calendar-cell {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .calendar {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+            }
+
+            .calendar-cell {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calendar {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+            }
+
+            .calendar-cell {
+                padding: 8px;
+                font-size: 14px; /* Smaller font size for mobile */
+            }
+
+            .upcoming-events li {
+                flex-direction: column; /* Stack items vertically */
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Create Event</a>
+    <a href="#">Event Calendar</a>
+    <a href="#">Request Approval</a>
+    <a href="#">Contact Us</a>
+</div>
+
+<div class="calendar-container">
+    <h1>Event Calendar</h1>
+    
+    <div class="calendar">
+        <!-- Example calendar days -->
+        <div class="calendar-cell" style="background-color: black; color: white;">Sun</div>
+        <div class="calendar-cell" style="background-color: black; color: white;">Mon</div>
+        <div class="calendar-cell" style="background-color: black; color: white;">Tue</div>
+        <div class="calendar-cell" style="background-color: black; color: white;">Wed</div>
+        <div class="calendar-cell" style="background-color: black; color: white;">Thu</div>
+        <div class="calendar-cell" style="background-color: black; color: white;">Fri</div>
+        <div class="calendar-cell" style="background-color: black; color: white;">Sat</div>
+
+        <!-- Sample dates (You would generate these dynamically) -->
+        <div class="calendar-cell" style="background-color: red;">1</div>
+        <div class="calendar-cell" style="background-color: red;">2</div>
+        <div class="calendar-cell">3</div>
+        <div class="calendar-cell">4</div>
+        <div class="calendar-cell" style="background-color: red;">5</div>
+        <div class="calendar-cell">6</div>
+        <div class="calendar-cell">7</div>
+        <div class="calendar-cell" style="background-color: red;">8</div>
+        <div class="calendar-cell">9</div>
+        <div class="calendar-cell">10</div>
+        <div class="calendar-cell">11</div>
+        <div class="calendar-cell">12</div>
+        <div class="calendar-cell" style="background-color: red;">13</div>
+        <div class="calendar-cell" style="background-color: yellow;">14</div>
+        <div class="calendar-cell">15</div>
+        <div class="calendar-cell" style="background-color: yellow;">16</div>
+        <div class="calendar-cell">17</div>
+        <div class="calendar-cell">18</div>
+        <div class="calendar-cell" style="background-color: yellow;">19</div>
+        <div class="calendar-cell" style="background-color: green;">20</div>
+        <div class="calendar-cell" style="background-color: #007BFF;">21</div>
+        <div class="calendar-cell">22</div>
+        <div class="calendar-cell" style="background-color: green;">23</div>
+        <div class="calendar-cell">24</div>
+        <div class="calendar-cell" style="background-color: red;">25</div>
+        <div class="calendar-cell" style="background-color: green;">26</div>
+        <div class="calendar-cell">27</div>
+        <div class="calendar-cell" style="background-color: green;">28</div>
+        <div class="calendar-cell">29</div>
+        <div class="calendar-cell" style="background-color: yellow;">30</div>
+        <div class="calendar-cell" style="background-color: #007BFF;">31</div>
+    </div>
+
+    <div class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li>Event 1: <span>Date & Time</span> <button>RSVP</button></li>
+            <li>Event 2: <span>Date & Time</span> <button>RSVP</button></li>
+            <li>Event 3: <span>Date & Time</span> <button>RSVP</button></li>
+        </ul>
+    </div>
+
+    <a href="createEvent.html"><button class="create-event-btn">Create New Event</button></a>
+</div>
+
+</body>
+</html>

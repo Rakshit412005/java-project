@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #007BFF 0%, #fff 100%);
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #007BFF;
+            padding: 15px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        .hero {
+            background: url('path/to/your/hero-image.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .categories, .upcoming-events, .testimonials {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        .category {
+            display: inline-block;
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px;
+        }
+
+        .event {
+            background: #fff;
+            margin: 15px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .category, .event {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Create Event</a>
+    <a href="#">Event Calendar</a>
+    <a href="#">Request Approval</a>
+    <a href="#">Contact Us</a>
+</div>
+
+<div class="hero">
+    <h1>Welcome to Event Management</h1>
+    <p>Plan and Manage Your Events Effortlessly</p>
+    <a href="#" class="btn">Get Started</a>
+</div>
+
+<div class="categories">
+    <h2>Event Categories</h2>
+    <div class="category">Weddings</div>
+    <div class="category">Corporate Events</div>
+    <div class="category">Concerts</div>
+    <div class="category">Workshops</div>
+</div>
+
+<div class="upcoming-events">
+    <h2>Upcoming Events</h2>
+    <div class="event">
+        <h3>Annual Tech Conference</h3>
+        <p>Date: 25th Dec 2024</p>
+        <p>Location: SRM University</p>
+    </div>
+    <div class="event">
+        <h3>Music Festival</h3>
+        <p>Date: 15th Jan 2025</p>
+        <p>Location: Central Park</p>
+    </div>
+</div>
+
+<div class="testimonials">
+    <h2>What Our Users Say</h2>
+    <p>"The platform made organizing my event a breeze!" - User A</p>
+    <p>"Great features and easy to use." - User B</p>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Event Management. All rights reserved.</p>
+</div>
+
+</body>
+</html>
